@@ -4,7 +4,7 @@
     <title>Energy Counter</title>
 </head>
 <body>
-    <h1 id="numberDisplay">You have 0 energy<span id="energyPerSecond">(0/s)</span></h1>
+    <h1 id="numberDisplay">You have 0 energy</h1><span id="energyPerSecond">(0/s)</span>
     <button onclick="addEnergy()">Manually create some energy</button><br>
     <button onclick="startGeneratingEnergy()" id="dim1" disabled>Start Generating Energy</button>You have: <span id="dim1Count">0</span><span id="dim1EnergyPerSecond">(0/s)</span>
 
@@ -27,6 +27,8 @@
             dim1Count++;
             updateDim1Count();
             updateDim1EnergyPerSecond();
+            var dim1Button = document.getElementById("dim1");
+            dim1Button.disabled = true; // Disable the button after clicking
         }
 
         // Function to increase the energy value
