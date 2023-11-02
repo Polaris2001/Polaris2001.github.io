@@ -1,29 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Number Counter</title>
+    <title>Energy Counter</title>
 </head>
 <body>
-<<<<<<< HEAD
-    <h1>You have </h1><h1 id="numberDisplay">0</h1><h1>  ideas.</h1>
-=======
     <h1 id="numberDisplay">0</h1>
->>>>>>> f4294dddb7a09b6dbe89956702db3e96900c182f
+    <button onclick="addEnergy()">Manually create some energy</button>
+    <button onclick="startGeneratingEnergy()" id="startButton" disabled>Start Generating Energy</button>
 
     <script>
-        // Function to update the number display
-        function updateNumber() {
-            var numberDisplay = document.getElementById("numberDisplay");
-            var currentNumber = parseInt(numberDisplay.innerText);
-            numberDisplay.innerText = currentNumber + 1;
+        var currentEnergy = 0;
+        var energyInterval;
+
+        // Function to update the energy display
+        function updateEnergy() {
+            var energyDisplay = document.getElementById("numberDisplay");
+            energyDisplay.innerText = "You have " + currentEnergy + " energy.";
+            checkEnergyThreshold();
         }
 
-        // Update the number every second
-        setInterval(updateNumber, 1000);
+        // Function to check energy threshold and enable/disable start button
+        function checkEnergyThreshold() {
+            var startButton = document.getElementById("startButton");
+            if (currentEnergy >= 10) {
+                startButton.disabled = false;
+            } else {
+                startButton.disabled = true;
+            }
+        }
+
+        // Function to start generating energy
+        function startGeneratingEnergy() {
+            energyInterval = setInterval(increaseEnergy, 1000);
+        }
+
+        // Function to increase the energy value
+        function increaseEnergy() {
+            currentEnergy++;
+            updateEnergy();
+        }
+
+        // Function to manually add energy
+        function addEnergy() {
+            currentEnergy++;
+            updateEnergy();
+        }
     </script>
 </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> f4294dddb7a09b6dbe89956702db3e96900c182f
