@@ -4,18 +4,20 @@
     <title>Energy Counter</title>
 </head>
 <body>
-    <h1 id="numberDisplay">0</h1>
-    <button onclick="addEnergy()">Manually create some energy</button>
+    <h1 id="numberDisplay">You have 0 energy</h1>
+    <button onclick="addEnergy()">Manually create some energy</button><br>
     <button onclick="startGeneratingEnergy()" id="startButton" disabled>Start Generating Energy</button>
+    <span id="autoClickCount"></span>
 
     <script>
         var currentEnergy = 0;
         var energyInterval;
+        var autoClickCount = 0;
 
         // Function to update the energy display
         function updateEnergy() {
             var energyDisplay = document.getElementById("numberDisplay");
-            energyDisplay.innerText = "You have " + currentEnergy + " energy.";
+            energyDisplay.innerText = "You have " + currentEnergy + " energy";
             checkEnergyThreshold();
         }
 
@@ -32,6 +34,8 @@
         // Function to start generating energy
         function startGeneratingEnergy() {
             energyInterval = setInterval(increaseEnergy, 1000);
+            autoClickCount++;
+            updateAutoClickCount();
         }
 
         // Function to increase the energy value
@@ -43,7 +47,13 @@
         // Function to manually add energy
         function addEnergy() {
             currentEnergy++;
-            updateEnergy();
+           updateEnergy();
+        }
+
+        // Function to update the auto click count
+        function updateAutoClickCount() {
+            var autoClickCountElement = document.getElementById("autoClickCount");
+            autoClickCountElement.innerText = "You have: " + autoClickCount;
         }
     </script>
 </body>
