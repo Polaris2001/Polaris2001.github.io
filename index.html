@@ -4,40 +4,29 @@
     <title>Energy Counter</title>
 </head>
 <body>
-    <h1 id="numberDisplay">You have 0 energy</h1><span id="energyPerSecond">(0/s)</span>
+    <h1 id="numberDisplay">You have 0 energy<span id="energyPerSecond">(0/s)</span></h1>
     <button onclick="addEnergy()">Manually create some energy</button><br>
-    <button onclick="startGeneratingEnergy()" id="dim1" disabled>Start Generating Energy</button>You have: 0<span id="dim1Count"></span><span id="dim1EnergyPerSecond">(0/s)</span>
+    <button onclick="startGeneratingEnergy()" id="dim1" disabled>Start Generating Energy</button>You have: <span id="dim1Count">0</span><span id="dim1EnergyPerSecond">(0/s)</span>
 
     <script>
         var currentEnergy = 0;
         var energyInterval;
         var energyPerSecond = 0;
-        var dim1EnergyPerSecond = 0;
-        var autoClickCount = 0;
+        var dim1Count = 0;
 
         // Function to update the energy display
         function updateEnergy() {
             var energyDisplay = document.getElementById("numberDisplay");
             energyDisplay.innerText = "You have " + currentEnergy + " energy";
-            checkEnergyThreshold();
-        }
-
-        // Function to check energy threshold and enable/disable start button
-        function checkEnergyThreshold() {
-            var dim1 = document.getElementById("dim1");
-            if (currentEnergy >= 10) {
-                dim1.disabled = false;
-            } else {
-                dim1.disabled = true;
-            }
+            updateEnergyPerSecond();
         }
 
         // Function to start generating energy
         function startGeneratingEnergy() {
             energyInterval = setInterval(increaseEnergy, 1000);
-            autoClickCount++;
-            updateAutoClickCount();
-            updateEnergyPerSecond();
+            dim1Count++;
+            updateDim1Count();
+            updateDim1EnergyPerSecond();
         }
 
         // Function to increase the energy value
@@ -49,23 +38,27 @@
         // Function to manually add energy
         function addEnergy() {
             currentEnergy++;
-          updateEnergy();
+            updateEnergy();
         }
 
         // Function to update the dimension 1 count
         function updateDim1Count() {
             var dim1CountElement = document.getElementById("dim1Count");
-            dim1CountElement.innerText = "You have: " + dim1Count;
+            dim1CountElement.innerText = dim1Count;
         }
 
         // Function to update the energy earned per second using dimension 1
         function updateDim1EnergyPerSecond() {
-            var dim1energyPerSecondElement = document.getElementById("dim1EnergyPerSecond");
-            var dim1EnergyPerSecond = autoClickCount
-            energyPerSecondElement.innerText = "(" + dim1EnergyPerSecond + "/s)";
+            var dim1EnergyPerSecondElement = document.getElementById("dim1EnergyPerSecond");
+            var dim1EnergyPerSecond = dim1Count;
+            dim1EnergyPerSecondElement.innerText = "(" + dim1EnergyPerSecond + "/s)";
         }
 
         // Function to update the energy earned per second
+        function updateEnergyPerSecond() {
+            var energyPerSecondElement = document.getElementById("energyPerSecond");
+            energyPerSecondElement.innerText = "(" + energyPerSecond + "/s)";
+        }
     </script>
 </body>
 </html>
