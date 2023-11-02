@@ -8,6 +8,7 @@
     <button onclick="addEnergy()">Manually create some energy</button><br>
     <button onclick="startGeneratingEnergy()" id="startButton" disabled>Start Generating Energy</button>
     <span id="autoClickCount"></span>
+    <span id="energyPerSecond"></span>
 
     <script>
         var currentEnergy = 0;
@@ -36,6 +37,7 @@
             energyInterval = setInterval(increaseEnergy, 1000);
             autoClickCount++;
             updateAutoClickCount();
+            updateEnergyPerSecond();
         }
 
         // Function to increase the energy value
@@ -47,13 +49,20 @@
         // Function to manually add energy
         function addEnergy() {
             currentEnergy++;
-           updateEnergy();
+          updateEnergy();
         }
 
         // Function to update the auto click count
         function updateAutoClickCount() {
             var autoClickCountElement = document.getElementById("autoClickCount");
-            autoClickCountElement.innerText = "You have: " + autoClickCount;
+            autoClickCountElement.innerText = "You have: " + autoClickCount + " auto button clicks";
+        }
+
+        // Function to update the energy earned per second using the auto button
+        function updateEnergyPerSecond() {
+            var energyPerSecondElement = document.getElementById("energyPerSecond");
+            var energyPerSecond = autoClickCount
+            energyPerSecondElement.innerText = "(" + energyPerSecond + "/s)";
         }
     </script>
 </body>
