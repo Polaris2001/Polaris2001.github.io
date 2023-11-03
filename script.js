@@ -1,0 +1,25 @@
+//Declare variables
+var energyCount = 10;
+var energyPerSec = 0;
+var dim1Count = 0;
+var dim1EnergyPerSec = 0;
+
+//Declare constants
+const numberdisplay = document.getElementById('numberDisplay');
+const dim1Display = document.getElementById('dim1Count');
+
+// Update energy displayed on the main panel every 100ms
+function updateEnergyCount() {
+    energyCount += energyPerSec/10;
+    numberdisplay.textContent = 'You have ' + energyCount + ' energy. (' + energyPerSec + '/s)';
+}
+
+// Update dimension 1 data when it is bought
+dim1Display.onclick = function updateDim1() {
+    dim1Count++;
+    energyPerSec++;
+    dim1Display.textContent = 'You have: ' + dim1Count;
+}
+
+
+setInterval(updateEnergyCount(), 100);
