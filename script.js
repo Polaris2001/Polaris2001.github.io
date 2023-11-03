@@ -15,10 +15,11 @@ function updateEnergyCount() {
 }
 
 // Update dimension 1 data when it is bought
-dim1Display.onclick = function() {
+function dim1Update()　{
     dim1Count++;
     energyPerSec++;
     dim1Display.textContent = 'You have: ' + dim1Count;
 };
 
 setInterval(updateEnergyCount, 100);
+dim1Display.onclick = dim1Update();
