@@ -21,5 +21,8 @@ function manualEnergy() {
 // Add event listener to the manual energy button
 document.getElementById("manualEnergy").addEventListener("click", manualEnergy);
 
+// Call the updateEnergyPerSecond function initially
+updateEnergyPerSecond();
+
 // Run the updateEnergyPerSecond function every second (1000ms)
 setInterval(updateEnergyPerSecond, 1000);
