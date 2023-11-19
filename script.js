@@ -2,27 +2,24 @@
 let energyCountJS = 0;
 let energyPerSecondJS = 0;
 
-// Manual generate energy
-function manualEnergy() {
-  energyCountJS++;
-  updateEnergyCount();
-}
-
 // Update energy count in HTML
 function updateEnergyCount() {
-  document.getElementById("energyCount").textContent = "You have " + energyCountJS + " energy";
+  document.getElementById("energyCount").textContent = "You have " + energyCountJS + " energy.";
 }
 
 // Update energy per second in HTML
 function updateEnergyPerSecond() {
-  document.getElementById("energyPerSecond").textContent = "You generate " + energyPerSecondJS + " energy every second.";
+  document.getElementById("energyPerSecond").textContent = "You generate " + energyPerSecondJS + " energy per second.";
 }
 
-// Run both functions every 100ms
-function updateEnergyDisplayUI() {
-  updateEnergyCount();
-  updateEnergyPerSecond();
+// Manual generate energy
+function manualEnergy() {
+  energyCountJS++;
+  updateEnergyCount(); // Update the energy count in the HTML
 }
 
+// Add event listener to the manual energy button
 document.getElementById("manualEnergy").addEventListener("click", manualEnergy);
-setInterval(updateEnergyDisplayUI, 100);
+
+// Run the updateEnergyPerSecond function every second (1000ms)
+setInterval(updateEnergyPerSecond, 1000);
