@@ -1,25 +1,34 @@
-// Declare variables
-var energyCount = 10;
-var energyPerSec = 0;
-var dim1Count = 0;
-var dim1EnergyPerSec = 0;
+// Declare variables for energy display
+let energyCountJS = 0;
+let energyPerSecondJS = 0;
 
-// Declare constants
-const numberDisplay = document.getElementById('numberDisplay');
-const dim1Display = document.getElementById('dim1Count');
+// Declare variables for energy generation
+let autoGenerateJS = false;
+let autoGeneratorJS = 0;
 
-// Update energy displayed on the main panel every 100ms
+// Update energy count in HTML
 function updateEnergyCount() {
-    energyCount += energyPerSec / 10;
-    numberDisplay.textContent = 'You have ' + energyCount + ' energy. (' + energyPerSec + '/s)';
+  document.getElementById("energyCount").textContent = "You have " + energyCountJS + " energy.";
 }
 
-// Update dimension 1 data when it is bought
-function dim1Update()　{
-    dim1Count++;
-    energyPerSec++;
-    dim1Display.textContent = 'You have: ' + dim1Count;
-};
+// Update energy per second in HTML
+function updateEnergyPerSecond() {
+  document.getElementById("energyPerSecond").textContent = "You generate " + energyPerSecondJS + " energy per second.";
+}
 
-setInterval(updateEnergyCount, 100);
-dim1Display.onclick = dim1Update();
+// Run both functions every 100ms
+function updateEnergyDisplayUI() {
+  updateEnergyCount();
+  updateEnergyPerSecond();
+}
+setInterval(updateEnergyDisplayUI, 100);
+
+// Manual generate energy
+function manualEnergy(){
+    energyCountJS++;
+}
+document.getElementById("manualEnergy").addEventListener("click", manualEnergy)
+
+function autoEnergy(){
+
+}

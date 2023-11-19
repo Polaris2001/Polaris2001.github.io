@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Energy Counter</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divine Essence</title>
 </head>
 <body>
-    <h1 id="numberDisplay">You have 0 energy (0/s)</h1>
-    <button onclick="dim1()" id="dim1">Start Generating Energy</button><span id="dim1Count">You have: 0</span>
+    <h1> Divine Essence </h1>
+
+    <div id="energyCountUI">
+        <h2 id="energyCount">You have 0 energy</h2>
+        <h3 id="energyPerSecond">You generate 0 energy every second.</h3>
+    </div>
+
+    <div id="generateEnergyUI">
+        <button id="manualEnergy"></button>
+        <button id="autoEnergy"></button>
+    </div>
 </body>
 </html>
