@@ -11,7 +11,9 @@
   }
 
   // Add event listener to the manual energy button
+  console.log(document.getElementById("manualEnergy")); // Check if the element is found
   document.getElementById("manualEnergy").addEventListener("click", manualEnergy);
+ 
 
 
   // ------ Part 3 -- Update Statistics ------
