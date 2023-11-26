@@ -24,12 +24,12 @@ document.getElementById("autoEnergy").addEventListener("click", autoEnergy);
 // Update energy count in HTML
 function updateEnergyCount() {
     energyCountJS = energyCountJS + energyPerSecondJS/10;
-    document.getElementById("energyCount").textContent = "You have " + energyCountJS + " energy.";
+    document.getElementById("energyCount").textContent = "You have " + Math.round(energyCountJS) + " energy.";
 }
 
 // Update energy per second in HTML
 function updateEnergyPerSecond() {
-    document.getElementById("energyPerSecond").textContent = "You generate " + energyPerSecondJS + " energy every second.";
+    document.getElementById("energyPerSecond").textContent = "You generate " + Math.round(energyPerSecondJS) + " energy every second.";
 }
 
 // ------ Part 4 -- Run functions ------
