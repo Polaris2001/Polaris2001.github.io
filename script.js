@@ -12,9 +12,18 @@ function manualEnergy() {
 // Add event listener to the manual energy button
 document.getElementById("manualEnergy").addEventListener("click", manualEnergy);
 
+// Auto generate energy
+function autoEnergy()　{
+    energyPerSecondJS++;
+}
+   
+// Add event listener to the auto energy button
+document.getElementById("autoEnergy").addEventListener("click", autoEnergy);
+
 // ------ Part 3 -- Update Statistics ------
 // Update energy count in HTML
 function updateEnergyCount() {
+    energyCountJS = energyCountJS + energyPerSecondJS/10;
     document.getElementById("energyCount").textContent = "You have " + energyCountJS + " energy.";
 }
 
