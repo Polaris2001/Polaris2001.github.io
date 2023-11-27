@@ -1,10 +1,30 @@
-// ------ Part 1 -- Declaring variables ------
+// ------ Part 1 -- Declaring variables and constant ------
+// ------ Part 1.1 -- Declaring constant
+
+
+
+// ------ Part 1.2 -- Declaring variable
 // Declare variables for energy display
 let energyCountJS = 0;
 let energyPerSecondJS = 0;
 let generatorCountJS = 0;
 
 // ------ Part 2 -- General Functions ------
+// ------ Part 2.1 -- Sequence Functions ------
+
+function generateSequence(n) {
+    const sequence = [10]; // Start with the first term x1 = 10
+    
+    for (let i = 2; i <= n; i++) {
+      const term = sequence[i - 2] + (i - 1); // Calculate xn using the formula
+      sequence.push(term);
+    }
+
+    return sequence;
+}
+   
+// ------ Part 2.2 --  General Functions ------
+
 // Manual generate energy
 function manualEnergy() {
     energyCountJS++;
@@ -14,12 +34,15 @@ function manualEnergy() {
 document.getElementById("manualEnergy").addEventListener("click", manualEnergy);
 
 // Auto generate energy
-function autoEnergy()　{
-    energyPerSecondJS++;
-    generatorCountJS++;
+function autoEnergy() {
+    if (energyCountJS >= generateSequence(generatorCountJS)[generatorCountJS - 1]) {
+      energyPerSecondJS++;
+      generatorCountJS++;
+    }
+
     document.getElementById("generatorCount").textContent = "You have: " + generatorCountJS;
 }
-   
+
 // Add event listener to the auto energy button
 document.getElementById("autoEnergy").addEventListener("click", autoEnergy);
 
