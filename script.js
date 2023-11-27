@@ -2,6 +2,7 @@
 // Declare variables for energy display
 let energyCountJS = 0;
 let energyPerSecondJS = 0;
+let generatorCountJS = 0;
 
 // ------ Part 2 -- General Functions ------
 // Manual generate energy
@@ -15,6 +16,8 @@ document.getElementById("manualEnergy").addEventListener("click", manualEnergy);
 // Auto generate energy
 function autoEnergy()　{
     energyPerSecondJS++;
+    generatorCountJS++;
+    document.getElementById("generatorCount").textContent = "You have: " + generatorCountJS;
 }
    
 // Add event listener to the auto energy button
