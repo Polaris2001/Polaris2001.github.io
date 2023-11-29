@@ -29,13 +29,15 @@ function autoEnergy() {
     const price = baseCost * Math.pow(1.15, generatorCountJS); // Calculate the price based on the formula
   
     if (energyCountJS >= price) {
-      energyPerSecondJS++;
-      generatorCountJS++;
+        energyCountJS = energyCountJS - price;
+        energyPerSecondJS++;
+        generatorCountJS++;
     }
   
     document.getElementById("generatorCount").textContent = "You have: " + generatorCountJS;
-    document.getElementById("costAutoEnergy").textContent = "Cost: " + price;
+    document.getElementById("costAutoEnergy").textContent = "Cost: " + Math.round(price);
   }
+  
 // Add event listener to the auto energy button
 document.getElementById("autoEnergy").addEventListener("click", autoEnergy);
 
