@@ -12,17 +12,6 @@ let costAutoEnergyJS = 10;
 
 // ------ Part 2 -- General Functions ------
 // ------ Part 2.1 -- Sequence Functions ------
-
-function generateSequence(n) {
-    const sequence = [10]; // Start with the first term x1 = 10
-    
-    for (let i = 2; i <= n; i++) {
-      const term = sequence[i - 2] + (i - 1); // Calculate xn using the formula
-      sequence.push(term);
-    }
-
-    return sequence;
-}
    
 // ------ Part 2.2 --  General Functions ------
 
@@ -36,9 +25,10 @@ document.getElementById("manualEnergy").addEventListener("click", manualEnergy);
 
 // Auto generate energy
 function autoEnergy() {
-    
-    energyPerSecondJS++;
-    generatorCountJS++;
+    if(energyCountJS >= 10 * Math.pow(1.15, generatorCountJS)) {
+        energyPerSecondJS++;
+        generatorCountJS++;
+    }
     document.getElementById("generatorCount").textContent = "You have: " + generatorCountJS;
     document.getElementById("costAutoEnergy").textContent = "Cost: " + costAutoEnergyJS;
 }
