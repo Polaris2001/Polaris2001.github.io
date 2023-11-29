@@ -8,6 +8,7 @@
 let energyCountJS = 0;
 let energyPerSecondJS = 0;
 let generatorCountJS = 0;
+let costAutoEnergyJS = 10;
 
 // ------ Part 2 -- General Functions ------
 // ------ Part 2.1 -- Sequence Functions ------
@@ -39,6 +40,7 @@ function autoEnergy() {
     energyPerSecondJS++;
     generatorCountJS++;
     document.getElementById("generatorCount").textContent = "You have: " + generatorCountJS;
+    document.getElementById("costAutoEnergy").textContent = "Cost: " + costAutoEnergyJS;
 }
 
 // Add event listener to the auto energy button
