@@ -35,11 +35,9 @@ document.getElementById("manualEnergy").addEventListener("click", manualEnergy);
 
 // Auto generate energy
 function autoEnergy() {
-    if (energyCountJS >= generateSequence(generatorCountJS)[generatorCountJS - 1]) {
-      energyPerSecondJS++;
-      generatorCountJS++;
-    }
-
+    
+    energyPerSecondJS++;
+    generatorCountJS++;
     document.getElementById("generatorCount").textContent = "You have: " + generatorCountJS;
 }
 
