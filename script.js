@@ -25,14 +25,17 @@ document.getElementById("manualEnergy").addEventListener("click", manualEnergy);
 
 // Auto generate energy
 function autoEnergy() {
-    if(energyCountJS >= 10 * Math.pow(1.15, generatorCountJS)) {
-        energyPerSecondJS++;
-        generatorCountJS++;
+    const baseCost = 10; // Base cost of the generator
+    const price = baseCost * Math.pow(1.15, generatorCountJS); // Calculate the price based on the formula
+  
+    if (energyCountJS >= price) {
+      energyPerSecondJS++;
+      generatorCountJS++;
     }
+  
     document.getElementById("generatorCount").textContent = "You have: " + generatorCountJS;
-    document.getElementById("costAutoEnergy").textContent = "Cost: " + costAutoEnergyJS;
-}
-
+    document.getElementById("costAutoEnergy").textContent = "Cost: " + price;
+  }
 // Add event listener to the auto energy button
 document.getElementById("autoEnergy").addEventListener("click", autoEnergy);
 
