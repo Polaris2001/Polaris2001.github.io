@@ -1,5 +1,6 @@
 function updateTime() {
     var currentTime = new Date();
+    var utcOffset = 0; // UTC+8
     var localTime = new Date(currentTime.getTime() + (utcOffset * 60 * 60 * 1000));
     var hours = localTime.getHours().toString().padStart(2, '0');
     var minutes = localTime.getMinutes().toString().padStart(2, '0');
