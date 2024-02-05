@@ -1,34 +1,30 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-}
-
-h1 {
-    text-align: center;
-}
-
-h2 {
-    text-align: center;
-    margin-top: 20px;
-}
-
 .train-info {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 40px;
-}
-
-.train-info th, .train-info td {
-    padding: 10px;
     text-align: center;
-    border: 1px solid #ccc;
-}
-
-.train-info th {
-    background-color: #f0f0f0;
-}
-
-.train-info td {
-    font-size: 20px;
-}
+  }
+  
+  .train-info th {
+    padding: 10px;
+    background-color: #f2f2f2;
+  }
+  
+  .train-info td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .train-data {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .train-data div {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .train-data .label {
+    font-weight: bold;
+    margin-right: 5px;
+  }

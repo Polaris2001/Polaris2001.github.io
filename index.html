@@ -10,23 +10,23 @@
 
     <table class="train-info">
         <thead>
-            <tr>
-                <th>Time</th>
-                <th>Type</th>
-                <th>Destination</th>
-                <th>Remarks</th>
-            </tr>
+          <tr>
+            <th>Time</th>
+            <th colspan="3">Train Information</th>
+          </tr>
         </thead>
         <tbody>
-            <tr>
-                <td id="current-time"></td>
-                <td id="time-until-arrival"></td>
-                <td id="train-type"></td>
-                <td id="destination"></td>
-                <td id="remarks"></td>
-            </tr>
+          <tr>
+            <td id="current-time"></td>
+            <td class="train-data">
+              <div><span class="label">Time Until Arrival:</span><span id="time-until-arrival"></span></div>
+              <div><span class="label">Train Type:</span><span id="train-type"></span></div>
+              <div><span class="label">Destination:</span><span id="destination"></span></div>
+              <div><span class="label">Remarks:</span><span id="remarks"></span></div>
+            </td>
+          </tr>
         </tbody>
-    </table>
+      </table>
 
     <script src="script.js"></script>
 </body>
