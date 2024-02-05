@@ -8,24 +8,25 @@
     <h1>Train Arrival Screen</h1>
     <h2>Current Time: <span id="current-time"></span></h2>
 
-    <div class="train-info">
-        <div class="left-part">
-            <h3>Time Until Train Arrival:</h3>
-            <p id="time-left"></p>
-        </div>
-        <div class="middle-left-part">
-            <h3>Type of Train:</h3>
-            <p id="train-type">Local</p>
-        </div>
-        <div class="middle-right-part">
-            <h3>Destination:</h3>
-            <p id="destination">Station B</p>
-        </div>
-        <div class="right-part">
-            <h3>Remarks:</h3>
-            <p id="remarks">None</p>
-        </div>
-    </div>
+    <table class="train-info">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Type</th>
+                <th>Destination</th>
+                <th>Remarks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="current-time"></td>
+                <td id="time-until-arrival"></td>
+                <td id="train-type"></td>
+                <td id="destination"></td>
+                <td id="remarks"></td>
+            </tr>
+        </tbody>
+    </table>
 
     <script src="script.js"></script>
 </body>

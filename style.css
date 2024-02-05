@@ -14,26 +14,21 @@ h2 {
 }
 
 .train-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: 100%;
+    border-collapse: collapse;
     margin-top: 40px;
 }
 
-.left-part, .middle-left-part, .middle-right-part, .right-part {
-    flex-basis: 25%;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.train-info th, .train-info td {
+    padding: 10px;
     text-align: center;
+    border: 1px solid #ccc;
 }
 
-.left-part h3, .middle-left-part h3, .middle-right-part h3, .right-part h3 {
-    margin: 0;
-    font-size: 16px;
+.train-info th {
+    background-color: #f0f0f0;
 }
 
-.left-part p, .middle-left-part p, .middle-right-part p, .right-part p {
-    margin-top: 10px;
+.train-info td {
     font-size: 20px;
 }
