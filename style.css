@@ -14,16 +14,18 @@ h2 {
 }
 
 .train-info {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 40px;
 }
 
 .left-part, .middle-left-part, .middle-right-part, .right-part {
+    flex-basis: 25%;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    text-align: center;
 }
 
 .left-part h3, .middle-left-part h3, .middle-right-part h3, .right-part h3 {
