@@ -1,22 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Divine Essence</title>
+    <title>Train Arrival Screen</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="energyCountUI">
-        <h2 id="energyCount">You have 0 energy</h2>
-        <h3 id="energyPerSecond">You generate 0 energy every second.</h3>
+    <h1>Train Arrival Screen</h1>
+    <h2>Current Time: <span id="current-time"></span></h2>
+
+    <div class="train-info">
+        <div class="left-part">
+            <h3>Time Until Train Arrival:</h3>
+            <p id="time-left"></p>
+        </div>
+        <div class="middle-left-part">
+            <h3>Type of Train:</h3>
+            <p id="train-type">Local</p>
+        </div>
+        <div class="middle-right-part">
+            <h3>Destination:</h3>
+            <p id="destination">Station B</p>
+        </div>
+        <div class="right-part">
+            <h3>Remarks:</h3>
+            <p id="remarks">None</p>
+        </div>
     </div>
 
-    <div id="generateEnergyUI">
-        <button id="manualEnergy">Manually generate energy</button><br>
-        <h3 id="costAutoEnergy">Cost: 10</h3><button id="autoEnergy">Automatically generate energy</button><h3 id="generatorCount">You have: 0</h3>
-    </div>
-    
     <script src="script.js"></script>
 </body>
 </html>

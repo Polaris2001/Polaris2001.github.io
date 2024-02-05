@@ -1,3 +1,37 @@
-#costAutoEnergy, #autoEnergy, #generatorCount {
-    display: inline;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.train-info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    margin-top: 40px;
+}
+
+.left-part, .middle-left-part, .middle-right-part, .right-part {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.left-part h3, .middle-left-part h3, .middle-right-part h3, .right-part h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.left-part p, .middle-left-part p, .middle-right-part p, .right-part p {
+    margin-top: 10px;
+    font-size: 20px;
 }
